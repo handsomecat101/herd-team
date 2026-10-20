@@ -1,5 +1,7 @@
 # SOUL.md — Dự Án Là Gì + Quy Tắc Bất Biến
 
+**🧩 BẢN MẪU** — đây là template rỗng, không phải dự án thật. Bản đã điền đầy đủ: xem `examples/expense-tracker/`.
+
 > Đọc **đầu tiên**. File này cố định, ít khi sửa.
 > Ngân sách: ~60 dòng. Dài hơn là agent mới phải trả thuế context mỗi phiên.
 

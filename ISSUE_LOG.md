@@ -1,5 +1,7 @@
 # ISSUE_LOG.md — Sổ Tay Miễn Dịch Lỗi
 
+**🧩 BẢN MẪU** — đây là template rỗng, không phải dự án thật. Bản đã điền đầy đủ: xem `examples/expense-tracker/`.
+
 > **Chỉ Coordinator ghi file này.**
 > Chỉ ghi lỗi **có bài học kỹ thuật**. 5–8 dòng / lỗi.
 > Không chép lại nội dung này sang file khác.

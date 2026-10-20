@@ -1,5 +1,7 @@
 # DECISIONS.md — Nhật Ký Quyết Định
 
+**🧩 BẢN MẪU** — đây là template rỗng, không phải dự án thật. Bản đã điền đầy đủ: xem `examples/expense-tracker/`.
+
 > **Chỉ Coordinator ghi file này.**
 > Ghi **quyết gì** và **vì sao** — không ghi quyết định hiển nhiên.
 > Luật: 1–3 dòng / quyết định. Mới nhất ở trên.

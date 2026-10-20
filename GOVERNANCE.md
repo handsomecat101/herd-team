@@ -1,5 +1,7 @@
 # GOVERNANCE.md — Phân Quyền & Luật Phối Hợp
 
+**🧩 BẢN MẪU** — đây là template rỗng, không phải dự án thật. Bản đã điền đầy đủ: xem `examples/expense-tracker/`.
+
 > Không có phần này thì hai agent sẽ sửa cùng một file và ghi đè nhau.
 
 ---

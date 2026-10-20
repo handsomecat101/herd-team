@@ -4,6 +4,21 @@
 
 ---
 
+## ⛔ DỪNG LẠI — trước tiên hãy xác định bạn đang ở đâu
+
+**Trường hợp A — bạn vừa clone repo `herd-team`:**
+Đây là **bộ template**, KHÔNG phải một dự án. `SOUL.md`, `STATE.md`, `CONTRACT.md`…
+trong repo này là **bản mẫu rỗng**.
+
+→ **Đừng chạy Bước 0 bên dưới.** Hãy đọc `README.md` trước, xem
+`examples/expense-tracker/`, rồi copy bộ file vào gốc **dự án thật** của bạn.
+
+**Trường hợp B — bạn đang ở trong một dự án đã áp bộ kit này:**
+File `SOUL.md` của dự án đã được điền và mô tả một dự án cụ thể.
+→ Đọc tiếp bình thường.
+
+---
+
 ## Bước 0 — Khởi động bắt buộc
 
 Đọc theo đúng thứ tự, không bỏ qua:

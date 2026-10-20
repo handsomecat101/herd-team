@@ -1,5 +1,7 @@
 # CONTRACT.md — Hợp Đồng Giao Diện
 
+**🧩 BẢN MẪU** — đây là template rỗng, không phải dự án thật. Bản đã điền đầy đủ: xem `examples/expense-tracker/`.
+
 > **Chỉ Coordinator ghi file này.**
 > Mục đích: cho phép nhiều agent code **song song** mà không vỡ nhau.
 > Đổi contract = phải báo Coordinator. Không ai tự đổi.
