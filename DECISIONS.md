@@ -1,6 +1,6 @@
 # DECISIONS.md — Nhật Ký Quyết Định
 
-**🧩 BẢN MẪU** — đây là template rỗng, không phải dự án thật. Bản đã điền đầy đủ: xem `examples/expense-tracker/`.
+**🧩 BẢN MẪU** — đây là template rỗng, không phải dự án thật. Điền theo hướng dẫn trong file, rồi xoá dòng này.
 
 > **Chỉ Coordinator ghi file này.**
 > Ghi **quyết gì** và **vì sao** — không ghi quyết định hiển nhiên.
@@ -12,7 +12,7 @@
 
 `ISSUE_LOG.md` ghi **lỗi**. `CONTRACT.md` ghi **giao diện**.
 
-Không file nào ghi **lý do**. Ba tháng sau sẽ có người hỏi "sao không dùng SQLite?" —
+Không file nào ghi **lý do**. Ba tháng sau sẽ có người hỏi "sao lại chọn cách này?" —
 và không ai trả lời được, vì lúc quyết định thì lý do chỉ nằm trong context của một agent,
 mà context thì mất.
 
@@ -36,25 +36,27 @@ Không ghi: chọn tên biến, chia thư mục theo lẽ thường.
 ## Mẫu
 
 ```markdown
-### [YYYY-MM-DD] — [Quyết định trong 1 dòng]
+### [YYYY-MM-DD] — [quyết định trong 1 dòng]
 
 - **Chọn:** [làm gì]
-- **Vì:** [lý do thật — ràng buộc, chi phí hay thời gian]
+- **Vì:** [lý do thật — ràng buộc, chi phí, hay thời gian]
 - **Đánh đổi:** [mất gì; khi nào nên xem lại]
 ```
 
 Bốn dòng. Nếu dài hơn thì chưa hiểu rõ quyết định.
 
+Điểm đáng viết nhất ở dòng **Đánh đổi**: nó nói cho người sau biết **khi nào được phép
+đổi ý**. Một quyết định không ghi đánh đổi thì sẽ bị tranh luận lại vô ích.
+
 ---
 
 ## Quyết định
 
-### [YYYY-MM-DD] — [ví dụ: lưu dữ liệu bằng localStorage, không dùng backend]
+### [YYYY-MM-DD] — [quyết định đầu tiên]
 
-- **Chọn:** lưu toàn bộ giao dịch trong `localStorage`, kèm xuất/nhập JSON để sao lưu.
-- **Vì:** dự án không có yêu cầu nhiều người dùng và không muốn vận hành server.
-- **Đánh đổi:** dữ liệu gắn với một trình duyệt; xoá dữ liệu duyệt web là mất. Xem lại nếu
-  cần đồng bộ nhiều thiết bị.
+- **Chọn:** [làm gì]
+- **Vì:** [lý do]
+- **Đánh đổi:** [mất gì; xem lại khi nào]
 
 ---
 

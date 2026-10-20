@@ -10,14 +10,14 @@ Không có mã nguồn. Không chứa mã nguồn của herdr. herdr là công c
 
 ## ⛔ Bạn là agent vừa clone repo này?
 
-**Dừng lại.** Đây là bộ template — `SOUL.md`, `STATE.md`, `CONTRACT.md`… trong repo này
-là **bản mẫu rỗng**, không phải dự án đang chạy. Đừng boot theo `AGENTS.md` ở đây.
+**Dừng lại.** Các file trong repo này là **bản mẫu rỗng**, không phải dự án đang chạy.
+Đừng boot theo `AGENTS.md` ở đây.
 
 Việc của bạn:
 
 1. Đọc file này để biết kit gồm những gì
-2. Mở `examples/expense-tracker/` — bộ file **đã điền thật** của một dự án đã chạy xong
-3. Copy bộ file ở gốc repo vào gốc **dự án thật**, rồi điền `SOUL.md` + `STATE.md`
+2. Copy các file `.md` ở gốc repo vào gốc **dự án thật**
+3. Điền `SOUL.md` (dự án là gì, quy tắc bất biến) và `STATE.md` (danh sách task)
 4. Từ đó mới bootstrap theo `AGENTS.md`
 
 ---
@@ -27,15 +27,15 @@ Việc của bạn:
 | Có | Không có |
 |---|---|
 | File `.md` quy ước và template | Mã nguồn của bất kỳ dự án nào |
-| Ví dụ đã điền (`examples/`) | Mã nguồn của herdr |
-| Hướng dẫn dùng herdr (`HERD.md`) | Script, công cụ, binary |
+| Hướng dẫn dùng herdr (`HERD.md`) | Mã nguồn của herdr |
+| | Script, công cụ, binary |
 | | Danh sách phụ thuộc (`package.json`…) |
 
 Kit này **không chạy được một mình**. Nó là giấy tờ, không phải chương trình.
 
-Điều kiện để dùng: máy bạn đã cài [herdr](https://herdr.dev) và các agent chạy trong
-pane của nó. Không có herdr thì chỉ `SOUL`/`STATE`/`CONTRACT`/`DECISIONS`/`ISSUE_LOG`
-còn dùng được (bộ nhớ ngoài vẫn có giá trị); `HERD.md` thì vô dụng.
+Điều kiện để dùng: máy đã cài [herdr](https://herdr.dev) và các agent chạy trong pane của nó.
+Không có herdr thì `SOUL` / `STATE` / `CONTRACT` / `DECISIONS` / `ISSUE_LOG` vẫn dùng được
+(bộ nhớ ngoài vẫn có giá trị); riêng `HERD.md` thì vô dụng.
 
 ---
 
@@ -80,7 +80,6 @@ bỏ đi vai trò "kênh giao việc" của nó.
 | `ISSUE_LOG.md` | Sổ lỗi: Quick Index + nguyên nhân gốc | 5–8 dòng / lỗi |
 | `GOVERNANCE.md` | Phân quyền file, luật một-người-ghi, mức phê duyệt | ~80 dòng |
 | `HERD.md` | Playbook điều phối bằng herdr | ~120 dòng |
-| `examples/` | Bộ file thật của một dự án đã chạy xong | — |
 
 **Ngân sách độ dài không phải hình thức.** Mỗi phiên mới đều phải đọc lại bộ kit.
 File 500 dòng nghĩa là mỗi lần mở dự án, agent mất một khúc context chỉ để "nắm tình hình".
@@ -89,7 +88,7 @@ File 500 dòng nghĩa là mỗi lần mở dự án, agent mất một khúc con
 
 ## Áp kit vào một dự án — 5 phút
 
-1. Copy **các file `.md` ở gốc repo này** (không copy `examples/`) vào gốc dự án thật.
+1. Copy **các file `.md` ở gốc repo này** vào gốc dự án thật.
 2. Điền `SOUL.md` — dự án là gì, tech stack, **quy tắc bất biến**.
 3. Điền `STATE.md` — danh sách task ban đầu.
 4. Mở herdr, chạy các agent trong từng pane.
@@ -142,5 +141,4 @@ File 500 dòng nghĩa là mỗi lần mở dự án, agent mất một khúc con
 [handsomecat101/agent-team](https://github.com/handsomecat101/agent-team).
 Kit này giữ mục đích đó, thay kênh giao việc bằng herdr, và thêm `CONTRACT.md` + `DECISIONS.md`.
 
-Bộ kit này được đúc kết từ một dự án thật: app quản lý chi tiêu 15 file, làm xong trong
-một buổi với 3 agent + 1 coordinator. Bộ file đã dùng nằm ở `examples/expense-tracker/`.
+Các quy tắc trong `HERD.md` được đúc kết từ việc dùng thật, không phải viết ra trên lý thuyết.

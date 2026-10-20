@@ -1,6 +1,6 @@
 # CONTRACT.md — Hợp Đồng Giao Diện
 
-**🧩 BẢN MẪU** — đây là template rỗng, không phải dự án thật. Bản đã điền đầy đủ: xem `examples/expense-tracker/`.
+**🧩 BẢN MẪU** — đây là template rỗng, không phải dự án thật. Điền theo hướng dẫn trong file, rồi xoá dòng này.
 
 > **Chỉ Coordinator ghi file này.**
 > Mục đích: cho phép nhiều agent code **song song** mà không vỡ nhau.
@@ -20,29 +20,30 @@ Có file này thì hai bên code độc lập dựa trên một điểm tựa ch
 
 ---
 
-## Cách viết
+## Cách viết chữ ký
 
-Chốt **trước khi** giao việc. Ghi đủ chữ ký để bên dùng không phải đoán:
+Ghi đủ để bên dùng **không phải đoán**. Quan trọng nhất là **ngữ nghĩa biên** —
+đầu vào sai thì trả về cái gì.
 
 ```ts
-// Đủ: tên, tham số, kiểu trả về, ngữ nghĩa biên
-export function parseAmount(input: string): number;
-// '1.000.000' -> 1000000; chuỗi sai -> 0
+// Đủ: tên, tham số, kiểu trả về, và ngữ nghĩa khi đầu vào sai
+export function parsePort(input: string): number;
+// '8080' -> 8080; chuỗi không hợp lệ -> 0
 ```
 
 ```ts
-// Thiếu: không biết trường hợp sai thì trả gì
-export function parseAmount(input: string): number;
+// Thiếu: không biết trường hợp sai thì trả gì, bên dùng sẽ tự đoán
+export function parsePort(input: string): number;
 ```
 
-Với kiểu dữ liệu, ghi rõ **ngữ nghĩa của từng trường**, đặc biệt là định dạng và đơn vị:
+Với kiểu dữ liệu, ghi rõ **ngữ nghĩa từng trường**, đặc biệt là đơn vị và định dạng:
 
 ```ts
-export interface Transaction {
-  id: string;        // UUID, duy nhất
-  amount: number;    // số nguyên, đơn vị nhỏ nhất, >= 0
-  date: string;      // 'YYYY-MM-DD' giờ LOCAL, không phải UTC
-  note?: string;     // tuỳ chọn, tối đa 80 ký tự
+export interface [TênKiểu] {
+  id: string;         // [khoá — duy nhất hay không, sinh thế nào]
+  [trường]: number;   // [đơn vị là gì, có cho phép âm không]
+  [trường]: string;   // [định dạng chính xác, múi giờ nếu là ngày]
+  [trường]?: string;  // [tuỳ chọn — vắng mặt nghĩa là gì]
 }
 ```
 
@@ -53,13 +54,13 @@ export interface Transaction {
 ### 1. Kiểu dữ liệu dùng chung
 
 ```ts
-// [dán định nghĩa type/interface]
+// [dán định nghĩa type / interface]
 ```
 
 ### 2. Hàm lớp dữ liệu
 
 ```ts
-// [chữ ký + ngữ nghĩa biên]
+// [chữ ký + ngữ nghĩa biên cho từng hàm]
 ```
 
 ### 3. Props / giao diện thành phần
@@ -70,10 +71,10 @@ export interface Transaction {
 
 ### 4. Quy ước chung
 
-- Đường dẫn import: [`@/lib/...`]
-- Ngôn ngữ giao diện: [tiếng Việt]
-- Xử lý lỗi: [ném lỗi / trả giá trị rỗng — chốt rõ từng hàm]
-- Thư viện được dùng: [danh sách trắng]
+- **Đường dẫn import:** [`@/...`]
+- **Ngôn ngữ giao diện:** [tiếng Việt]
+- **Xử lý lỗi:** [hàm nào ném lỗi, hàm nào trả giá trị rỗng — chốt rõ từng hàm]
+- **Được dùng:** [danh sách thư viện]
 
 ---
 
@@ -83,7 +84,7 @@ export interface Transaction {
 
 | Ngày | Đổi gì | Vì sao |
 |------|--------|--------|
-| [YYYY-MM-DD] | [ví dụ: `amount` từ `> 0` thành `>= 0`] | [hai chỗ trong file đang mâu thuẫn nhau] |
+| [YYYY-MM-DD] | [mô tả thay đổi] | [lý do — thường là hai chỗ trong file mâu thuẫn nhau] |
 
 ---
 

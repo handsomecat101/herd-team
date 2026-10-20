@@ -1,6 +1,6 @@
 # ISSUE_LOG.md — Sổ Tay Miễn Dịch Lỗi
 
-**🧩 BẢN MẪU** — đây là template rỗng, không phải dự án thật. Bản đã điền đầy đủ: xem `examples/expense-tracker/`.
+**🧩 BẢN MẪU** — đây là template rỗng, không phải dự án thật. Điền theo hướng dẫn trong file, rồi xoá dòng này.
 
 > **Chỉ Coordinator ghi file này.**
 > Chỉ ghi lỗi **có bài học kỹ thuật**. 5–8 dòng / lỗi.
@@ -19,7 +19,7 @@
 
 | ID | Triệu chứng ngắn | File liên quan | Quy tắc tránh lặp lại (1 câu) | Status |
 |----|------------------|----------------|-------------------------------|--------|
-| `BUG-001` | [ví dụ: giá trị rỗng bị ép thành `0`] | `[file]` | [luật 1 câu] | ✅ Fixed |
+| `BUG-001` | [triệu chứng, 1 dòng] | `[file]` | [luật 1 câu] | ✅ Fixed |
 | `BUG-002` | | | | 🔴 Open |
 
 Trạng thái: `🔴 Open` · `🟡 Fixing` · `✅ Fixed` · `⚠️ Quy trình`
@@ -33,9 +33,9 @@ Trạng thái: `🔴 Open` · `🟡 Fixing` · `✅ Fixed` · `⚠️ Quy trình
 
 ### [BUG-001] [Tên lỗi ngắn]
 
-- **Ngày:** [YYYY-MM-DD] · **Phát hiện:** [agent] · **Sửa:** [agent] · **Status:** ✅ Fixed
+- **Ngày:** [YYYY-MM-DD] · **Phát hiện:** [ai] · **Sửa:** [ai] · **Status:** ✅ Fixed
 - **File:** `[đường dẫn]`
-- **Nguyên nhân gốc:** [1–2 câu, chỉ thẳng vào cơ chế — không mô tả triệu chứng lần nữa]
+- **Nguyên nhân gốc:** [1–2 câu, chỉ thẳng vào cơ chế — không mô tả lại triệu chứng]
 - **Cách sửa & bài học:**
   - [đã sửa thế nào]
   - **Quy tắc:** [điều cấm làm / phải làm để không tái phát]
@@ -44,16 +44,16 @@ Trạng thái: `🔴 Open` · `🟡 Fixing` · `✅ Fixed` · `⚠️ Quy trình
 
 ## Mẫu một entry tốt
 
-### [BUG-001] Hàm định dạng nhãn tháng trả `"T0"` với đầu vào rỗng
+### [BUG-001] Hàm ép kiểu số nhận chuỗi rỗng trả `0` thay vì báo lỗi
 
-- **Ngày:** 2026-01-15 · **Phát hiện:** Track C · **Sửa:** Track C · **Status:** ✅ Fixed
-- **File:** `lib/format.ts`
-- **Nguyên nhân gốc:** `Number('')` trả `0` nên nhãn thành `"T0"`; chuỗi rác cho `NaN` → `"TNaN"`.
-  Hàm không kiểm tra định dạng trước khi ép kiểu.
+- **Ngày:** [YYYY-MM-DD] · **Phát hiện:** [người kiểm tra] · **Sửa:** [người kiểm tra] · **Status:** ✅ Fixed
+- **File:** `[đường dẫn]`
+- **Nguyên nhân gốc:** ép kiểu trên chuỗi rỗng trả `0` thay vì báo lỗi, nên giá trị sai lọt vào
+  hệ thống mà trông như giá trị hợp lệ. Hàm không kiểm tra định dạng trước khi ép kiểu.
 - **Cách sửa & bài học:**
-  - Thêm kiểm tra bằng biểu thức chính quy + chặn giá trị tháng ngoài 01–12, sai thì trả chuỗi rỗng.
-  - **Quy tắc:** hàm định dạng nào nhận dữ liệu từ ngoài (bộ nhớ trình duyệt, file nhập, URL)
-    cũng phải kiểm tra trước khi ép sang số.
+  - Thêm kiểm tra định dạng trước khi ép kiểu; sai thì trả giá trị rỗng và báo lỗi.
+  - **Quy tắc:** mọi hàm nhận dữ liệu từ ngoài (bộ nhớ trình duyệt, file nhập, tham số dòng lệnh,
+    tham số URL) đều phải kiểm tra định dạng trước khi ép sang kiểu số.
 
 ---
 

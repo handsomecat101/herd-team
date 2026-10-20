@@ -1,6 +1,6 @@
 # SOUL.md — Dự Án Là Gì + Quy Tắc Bất Biến
 
-**🧩 BẢN MẪU** — đây là template rỗng, không phải dự án thật. Bản đã điền đầy đủ: xem `examples/expense-tracker/`.
+**🧩 BẢN MẪU** — đây là template rỗng, không phải dự án thật. Điền theo hướng dẫn trong file, rồi xoá dòng này.
 
 > Đọc **đầu tiên**. File này cố định, ít khi sửa.
 > Ngân sách: ~60 dòng. Dài hơn là agent mới phải trả thuế context mỗi phiên.
@@ -12,10 +12,10 @@
 | Field | Value |
 |-------|-------|
 | **Tên dự án** | [tên] |
-| **Loại** | Web app / CLI / API / Thư viện |
+| **Loại** | [web app / CLI / API / thư viện] |
 | **Mô tả 1 câu** | [làm được gì, cho ai] |
 | **Tech stack** | [ngôn ngữ, framework, thư viện chính] |
-| **Lưu trữ** | [localStorage / SQLite / Postgres / không có] |
+| **Lưu trữ** | [dữ liệu nằm ở đâu — hoặc "không có"] |
 | **Chạy local** | [lệnh + địa chỉ] |
 
 ---
@@ -26,9 +26,9 @@
 
 **Tiêu chí thành công** — kiểm chứng được, không cảm tính:
 
-- [ ] [ví dụ: build pass, không cảnh báo ở console]
-- [ ] [ví dụ: nhập 3 bản ghi rồi tải lại trang vẫn còn dữ liệu]
-- [ ] [ví dụ: lọc theo tháng ra đúng tập kết quả]
+- [ ] [tiêu chí 1 — viết sao cho có lệnh hoặc thao tác kiểm được]
+- [ ] [tiêu chí 2]
+- [ ] [tiêu chí 3]
 
 ---
 
@@ -36,7 +36,7 @@
 
 - **Thời gian:** [mốc, nếu có]
 - **Phụ thuộc:** [API ngoài, dịch vụ, giấy phép]
-- **Không được dùng:** [thư viện, dịch vụ bị cấm và lý do]
+- **Không được dùng:** [thứ bị cấm và lý do]
 
 ---
 
@@ -45,20 +45,24 @@
 > Phần quan trọng nhất của file. Đây là những điều **không được phá**, kể cả khi
 > có vẻ tiện hơn. Agent mới đọc 30 giây là biết mình không được làm gì.
 
-Viết theo dạng: **luật** + **vì sao** + **cách kiểm**.
+Viết mỗi luật theo dạng: **[luật] — vì [lý do]. Kiểm bằng [cách]**.
 
-```markdown
-1. [Luật] — vì [lý do]. Kiểm bằng [cách].
-```
+1. **[luật 1]** — vì [lý do]. Kiểm bằng [cách].
+2. **[luật 2]** — vì [lý do]. Kiểm bằng [cách].
+3. **[luật 3]** — vì [lý do]. Kiểm bằng [cách].
 
-Ví dụ thật:
+### Gợi ý dạng luật hay gặp
 
-1. **Không đọc `localStorage` trong initializer của `useState`** — vì server không có
-   `localStorage`, React sẽ cảnh báo hydration mismatch. Đọc trong `useEffect`, kèm cờ `hydrated`.
-2. **Lưu ngày dạng `'YYYY-MM-DD'` theo giờ local** — vì `toISOString()` đổi sang UTC và
-   giao dịch sẽ nhảy sang ngày khác. Kiểm bằng cách nhập giao dịch lúc 23:00.
-3. **Không thêm thư viện ngoài** — vì [lý do]. Muốn thêm thì hỏi Human.
-4. **`amount` là số nguyên, đơn vị nhỏ nhất của tiền tệ** — vì số thực gây sai số làm tròn.
+Chọn cái nào đúng với dự án của bạn:
+
+- **Môi trường chạy** — chỗ nào có thứ gì, chỗ nào không có
+  (server không có API của trình duyệt, CLI không có biến môi trường của web…)
+- **Định dạng dữ liệu lưu trữ** — kiểu ngày, múi giờ, đơn vị tiền, cách mã hoá
+- **Phụ thuộc bị cấm** — thư viện không được thêm, và lý do
+- **Ranh giới giữa các tầng** — tầng nào được gọi tầng nào
+
+> Luật không có "vì" thì vài tháng sau sẽ bị phá. Luật không có "kiểm bằng" thì không ai
+> biết mình đã phá hay chưa.
 
 ---
 

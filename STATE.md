@@ -1,6 +1,6 @@
 # STATE.md — Bảng Trạng Thái Dự Án
 
-**🧩 BẢN MẪU** — đây là template rỗng, không phải dự án thật. Bản đã điền đầy đủ: xem `examples/expense-tracker/`.
+**🧩 BẢN MẪU** — đây là template rỗng, không phải dự án thật. Điền theo hướng dẫn trong file, rồi xoá dòng này.
 
 > **Chỉ Coordinator ghi file này.**
 > Luật: **1 dòng / task**. Không nhật ký theo giờ, không phân tích lỗi ở đây.

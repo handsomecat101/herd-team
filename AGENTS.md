@@ -10,8 +10,8 @@
 Đây là **bộ template**, KHÔNG phải một dự án. `SOUL.md`, `STATE.md`, `CONTRACT.md`…
 trong repo này là **bản mẫu rỗng**.
 
-→ **Đừng chạy Bước 0 bên dưới.** Hãy đọc `README.md` trước, xem
-`examples/expense-tracker/`, rồi copy bộ file vào gốc **dự án thật** của bạn.
+→ **Đừng chạy Bước 0 bên dưới.** Hãy đọc `README.md` trước, rồi copy các file `.md`
+ở gốc repo này vào gốc **dự án thật** của bạn và điền `SOUL.md` + `STATE.md`.
 
 **Trường hợp B — bạn đang ở trong một dự án đã áp bộ kit này:**
 File `SOUL.md` của dự án đã được điền và mô tả một dự án cụ thể.

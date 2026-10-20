@@ -1,6 +1,6 @@
 # GOVERNANCE.md — Phân Quyền & Luật Phối Hợp
 
-**🧩 BẢN MẪU** — đây là template rỗng, không phải dự án thật. Bản đã điền đầy đủ: xem `examples/expense-tracker/`.
+**🧩 BẢN MẪU** — đây là template rỗng, không phải dự án thật. Điền theo hướng dẫn trong file, rồi xoá dòng này.
 
 > Không có phần này thì hai agent sẽ sửa cùng một file và ghi đè nhau.
 
@@ -66,9 +66,9 @@ Commit khi: bug fix xong, feature xong, tài liệu kit đổi.
 ```
 [PREFIX]: [mô tả ngắn]
 
-Feat: thêm form nhập giao dịch
-Fix: chặn hydration mismatch khi đọc localStorage
-Docs: khoá T-005 và ghi bàn giao
+Feat: thêm màn hình đăng nhập
+Fix: chặn gọi trùng khi bấm nút hai lần
+Docs: cập nhật STATE sau khi xong T-005
 ```
 
 Không commit code chưa chạy được. Không đẩy thẳng lên nhánh chính nếu dự án có yêu cầu review.
