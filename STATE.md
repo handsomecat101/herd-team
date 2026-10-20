@@ -26,6 +26,10 @@
 | [Human] | — | Duyệt, bật đèn xanh | 👤 Active | tất cả |
 
 > Ghi **pane ID**, không chỉ ghi tên — tên có thể trùng giữa các dự án.
+>
+> Cột **Được sửa** là phạm vi được **GHI**, không phải phạm vi được **BIẾT**.
+> Mọi agent đọc **toàn bộ** file kit — không ai có sổ riêng. Chia đường dẫn là để hai người
+> không sửa trùng một file, không phải để che thông tin của nhau.
 
 ---
 

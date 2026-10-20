@@ -31,6 +31,14 @@ File `SOUL.md` của dự án đã được điền và mô tả một dự án 
 
 Đọc xong, tóm tắt **2–3 dòng** tình trạng hiện tại rồi mới bắt tay vào việc.
 
+> **Bộ file này là của CHUNG, không phải sổ riêng của ai.** Mọi agent đọc cùng một bộ,
+> ở cùng một chỗ. Không ai có file ghi chú riêng — thông tin nằm một chỗ thì mọi người
+> nhìn ra cùng một sự thật.
+>
+> **Nếu `STATE.md` có vẻ lệch với thực tế trên đĩa** — ví dụ ghi task đang làm mà file
+> không tồn tại, hoặc file đã có mà không ai ghi — thì **báo Coordinator**, đừng tự đoán.
+> Thông tin cũ nguy hiểm hơn không có thông tin, vì nó trông đáng tin.
+
 ---
 
 ## Bước 0.5 — Nếu bạn đang chạy trong herdr

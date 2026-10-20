@@ -13,6 +13,31 @@ Một **Coordinator** (không viết code) + N **Worker**, cùng một herdr wor
 - Worker trả kết quả ở **tin nhắn cuối**.
 - File trên đĩa là **bộ nhớ**, không phải kênh giao việc.
 
+### Ai biết gì — đọc chung, ghi riêng
+
+Đây là chỗ dễ hiểu nhầm nhất: **chia mảng là chia quyền GHI, không chia quyền BIẾT.**
+
+| | Được GHI | Được ĐỌC |
+|---|---|---|
+| Bộ file kit | chỉ Coordinator | **mọi agent, toàn bộ** |
+| Code | worker theo đường dẫn của mình | mọi agent |
+
+**Không có sổ riêng cho từng agent.** Cả đội đọc chung một bộ file ở một chỗ, để mọi người
+nhìn ra cùng một sự thật. Nếu mỗi agent có ghi chú riêng thì không ai còn biết tình trạng chung.
+
+**Giới hạn thật của mô hình này:** worker chỉ thấy ảnh chụp tại lúc nó boot. Trong lúc nó làm,
+`STATE.md` có thể đã đổi mà nó không biết — và nó không thấy worker khác đang làm gì.
+
+Bù lại bằng ba cách:
+
+1. **`CONTRACT.md` chốt trước** — worker không cần biết bên kia đang làm gì, chỉ cần biết giao diện.
+2. **Prompt tự chứa** — Coordinator chịu trách nhiệm đưa context cần thiết vào prompt.
+3. **Coordinator là kênh đồng bộ duy nhất** — có gì đổi thì phải chủ động nói, không chờ ai hỏi.
+
+> **Nghĩa vụ của Coordinator:** thu báo cáo xong thì cập nhật `STATE.md` **ngay trong cùng lượt**.
+> Để trễ một lượt là worker kế tiếp boot lên đọc thông tin cũ rồi làm sai — mà thông tin cũ
+> nguy hiểm hơn không có thông tin, vì nó trông đáng tin.
+
 ---
 
 ## 2. Khảo sát đội hình
